@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Meu Site</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            display: flex;
+        }
+
+        .sidebar {
+            width: 250px;
+            background: rgba(0, 0, 0, 0.2);
+            padding: 40px 20px;
+            backdrop-filter: blur(10px);
+        }
+
+        .sidebar h2 {
+            color: #fff;
+            margin-bottom: 40px;
+            font-size: 24px;
+        }
+
+        .menu-item {
+            padding: 15px 20px;
+            margin-bottom: 10px;
+            background: rgba(255, 255, 255, 0.1);
+            color: #fff;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 16px;
+            transition: all 0.3s ease;
+            width: 100%;
+            text-align: left;
+        }
+
+        .menu-item:hover {
+            background: rgba(255, 255, 255, 0.25);
+            transform: translateX(5px);
+        }
+
+        .menu-item.active {
+            background: #fff;
+            color: #764ba2;
+            font-weight: bold;
+        }
+
+        .content {
+            flex: 1;
+            padding: 60px;
+            color: #fff;
+        }
+
+        .content h1 {
+            font-size: 40px;
+            margin-bottom: 20px;
+        }
+
+        .content p {
+            font-size: 18px;
+            line-height: 1.6;
+            max-width: 600px;
+        }
+
+        .section {
+            display: none;
+            animation: fadeIn 0.5s ease;
+        }
+
+        .section.active {
+            display: block;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="sidebar">
+        <h2>Menu</h2>
+        <button class="menu-item active" onclick="showSection('home')">Nossas pesquisas</button>
+        <button class="menu-item" onclick="showSection('sobre')">Prós</button>
+        <button class="menu-item" onclick="showSection('contato')">Contras</button>
+    </div>
+
+    <div class="content">
+        <section id="home" class="section active">
+            <h1>Colonização de Marte</h1>
+            <h2>Nossas Pesquisas</h2>
+            <p>Durante o desenvolvimento do projeto, realizamos diversas pesquisas para compreender
+melhor os principais desafios da colonização de Marte. Estudamos a latência na comunicação
+entre os planetas, identificando que o atraso nas mensagens é causado pela enorme distância
+entre a Terra e Marte, o que dificulta a troca de informações em tempo real.
+Também pesquisamos a janela de possibilidade de viagem, descobrindo que ela ocorre apenas a
+cada dois anos devido ao alinhamento orbital, o que torna o planejamento das missões essencial
+para evitar riscos e custos excessivos.
+Outra linha de estudo foi o tempo de viagem, em que analisamos as limitações das tecnologias
+atuais e as propostas de novos métodos de propulsão capazes de encurtar o trajeto.
+Investigamos ainda os efeitos da radiação cósmica, tanto sobre o corpo humano quanto sobre
+os equipamentos eletrônicos, e buscamos entender como diferentes materiais poderiam
+oferecer proteção eficiente.
+Por fim, estudamos os aspectos psicológicos de viver em outro planeta, observando como o
+isolamento, a distância da Terra e a convivência limitada podem afetar a mente humana e o
+bem-estar da tripulação a longo prazo.
+
+        </section>
+        
+        <section id="sobre" class="section">
+            <h1>Prós</h1>
+            <p>Esta é a seção de informações sobre o projeto. Aqui você pode descrever mais detalhes sobre você, seu negócio ou sua aplicação. O conteúdo é carregado dinamicamente ao clicar no menu lateral.</p>
+        </section>
+
+        <section id="contato" class="section">
+            <h1>Contato</h1>
+            <p>Entre em contato conosco através de email, telefone ou redes sociais. Estamos aqui para ajudar e responder suas dúvidas!</p>
+        </section>
+    </div>
+
+    <script>
+        function showSection(id) {
+            const sections = document.querySelectorAll('.section');
+            const buttons = document.querySelectorAll('.menu-item');
+            
+            sections.forEach(section => section.classList.remove('active'));
+            buttons.forEach(button => button.classList.remove('active'));
+            
+            document.getElementById(id).classList.add('active');
+            event.target.classList.add('active');
+        }
+    </script>
+</body>
+</html>
