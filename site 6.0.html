@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Meu Site</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            display: flex;
+        }
+
+        .sidebar {
+            width: 250px;
+            background: rgba(0, 0, 0, 0.2);
+            padding: 40px 20px;
+            backdrop-filter: blur(10px);
+        }
+
+        .sidebar h2 {
+            color: #fff;
+            margin-bottom: 40px;
+            font-size: 24px;
+        }
+
+        .menu-item {
+            padding: 15px 20px;
+            margin-bottom: 10px;
+            background: rgba(255, 255, 255, 0.1);
+            color: #fff;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 16px;
+            transition: all 0.3s ease;
+            width: 100%;
+            text-align: left;
+        }
+
+        .menu-item:hover {
+            background: rgba(255, 255, 255, 0.25);
+            transform: translateX(5px);
+        }
+
+        .menu-item.active {
+            background: #fff;
+            color: #764ba2;
+            font-weight: bold;
+        }
+
+        .content {
+            flex: 1;
+            padding: 60px;
+            color: #fff;
+        }
+
+        .content h1 {
+            font-size: 40px;
+            margin-bottom: 20px;
+        }
+
+        .content p {
+            font-size: 18px;
+            line-height: 1.6;
+            max-width: 600px;
+        }
+
+        .section {
+            display: none;
+            animation: fadeIn 0.5s ease;
+        }
+
+        .section.active {
+            display: block;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="sidebar">
+        <h2>Menu</h2>
+        <button class="menu-item active" onclick="showSection('home')">Nossas pesquisas</button>
+        <button class="menu-item" onclick="showSection('sobre')">Prós</button>
+        <button class="menu-item" onclick="showSection('contato')">Contras</button>
+        <button class="menu-item" onclick="showSection('fim')">Fim</button>
+    </div>
+
+    <div class="content">
+        <section id="home" class="section active">
+            <h1>Colonização de Marte</h1>
+            <h2>Nossas Pesquisas</h2>
+            <p>Durante o desenvolvimento do projeto, realizamos diversas pesquisas para compreender
+melhor os principais desafios da colonização de Marte. Estudamos a latência na comunicação
+entre os planetas, identificando que o atraso nas mensagens é causado pela enorme distância
+entre a Terra e Marte, o que dificulta a troca de informações em tempo real.
+Também pesquisamos a janela de possibilidade de viagem, descobrindo que ela ocorre apenas a
+cada dois anos devido ao alinhamento orbital, o que torna o planejamento das missões essencial
+para evitar riscos e custos excessivos.
+Outra linha de estudo foi o tempo de viagem, em que analisamos as limitações das tecnologias
+atuais e as propostas de novos métodos de propulsão capazes de encurtar o trajeto.
+Investigamos ainda os efeitos da radiação cósmica, tanto sobre o corpo humano quanto sobre
+os equipamentos eletrônicos, e buscamos entender como diferentes materiais poderiam
+oferecer proteção eficiente.
+Por fim, estudamos os aspectos psicológicos de viver em outro planeta, observando como o
+isolamento, a distância da Terra e a convivência limitada podem afetar a mente humana e o
+bem-estar da tripulação a longo prazo.
+</section>
+        
+        <section id="sobre" class="section">
+            <h1>Prós</h1>
+            <p>Viver em Marte representa uma oportunidade única para a humanidade garantir sua
+sobrevivência fora da Terra. A ideia de criar uma colônia espacial surge como uma forma de
+proteger a espécie humana diante de possíveis desastres globais. Além disso, o planeta já é
+amplamente explorado por robôs, o que facilita o estudo de sua superfície e condições
+ambientais. A possibilidade de desenvolver tecnologias avançadas, como habitats subterrâneos
+pressurizados e pesquisas sobre a terraformação a longo prazo, mostra que a colonização de
+Marte pode se tornar um grande passo científico e tecnológico. Esse tipo de projeto também
+estimula a inovação em áreas como energia, comunicação e biotecnologia, trazendo benefícios
+que vão além do espaço e impactam diretamente a vida na Terra.</p>
+        </section>
+
+        <section id="contato" class="section">
+            <h1>Contras</h1>
+            <p>Apesar das possibilidades, viver em Marte ainda é um enorme desafio. O planeta
+é frio, seco e perigoso, com temperaturas que podem chegar a –100 °C. A atmosfera é composta por
+95% de dióxido de carbono, quase sem oxigênio, e a pressão é tão baixa que os líquidos do corpo
+humano evaporariam sem um traje adequado. Marte também não possui campo magnético, o
+que o deixa completamente exposto à radiação cósmica e solar — um risco grave à saúde
+humana, podendo causar câncer, danos genéticos e até doenças neurológicas como o Alzheimer.
+Outro obstáculo é a distância: uma viagem até lá dura de 6 a 9 meses e só pode ser feita a cada
+dois anos, quando a Terra e Marte estão alinhados. Durante o trajeto, os astronautas ficam
+sujeitos à microgravidade, que enfraquece os músculos e os ossos, e precisam lidar com os altos
+custos de transporte de comida, oxigênio e equipamentos.
+Além disso, o planeta não oferece recursos prontos para uso. A água está congelada no subsolo,
+o solo contém substâncias tóxicas e não há condições naturais para o cultivo de plantas. E,
+mesmo que todos esses obstáculos físicos fossem resolvidos, ainda haveria o desafio
+psicológico: viver isolado, sem natureza, em espaços pequenos e com comunicação atrasada em
+até 20 minutos pode gerar solidão, estresse e depressão</p>
+        </section>
+       
+         <section id="fim" class="section">
+            <h1>Fim</h1>
+            <p> suas informações aparecerão aqui</p>
+        </section>
+    </div>
+
+    <script>
+        function showSection(id) {
+            const sections = document.querySelectorAll('.section');
+            const buttons = document.querySelectorAll('.menu-item');
+            
+            sections.forEach(section => section.classList.remove('active'));
+            buttons.forEach(button => button.classList.remove('active'));
+            
+            document.getElementById(id).classList.add('active');
+            event.target.classList.add('active');
+        }
+    </script>
+  
+    <script src="https://cdn.botpress.cloud/webchat/v3.5/inject.js"></script>
+    <script src="https://files.bpcontent.cloud/2025/12/10/15/20251210152911-EY15IUUA.js" defer></script>
+    
+    
+    
+</body>
+</html>
